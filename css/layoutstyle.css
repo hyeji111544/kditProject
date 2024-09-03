@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #87CEEB, #77ddff, #55a9fd);
+}
+
+header {
+
+    padding: 20px 50px 20px 50px;
+    margin-bottom: 50px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*배경 흐리한거*/
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+}
+
+.menu__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.menu__box>div {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.menu__box>div::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu__box>div:hover::after {
+    transform: scaleX(1);
+}
+
+.info__logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.info__login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+/*프로필클릭 시작*/
+
+.user__info {
+    position: relative;
+}
+
+.dropdown__menu {
+    width: 120px;
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    top: 50px;
+    /* Adjust based on the size of the .info__login element */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+    z-index: 1000;
+    /* Make sure it stays above other content */
+    transition: opacity 0.3s ease;
+    /* Smooth fade-in/out */
+}
+
+.dropdown__menu div {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown__menu div:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.show {
+    display: block;
+    /* Show the dropdown */
+    opacity: 1;
+}
+
+/*프로필클릭 끝*/
+
+.info__logout {
+    display: flex;
+    grid-gap: 30px;
+    align-items: center;
+    color: white;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.info__login>div,
+.info__logout>div {
+    color: white;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+}
+
+.info__login>div:nth-child(2):after,
+.info__logout>div::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    /* 줄의 높이 설정 */
+    background-color: white;
+    /* 줄의 색상 설정 */
+    transform: scaleX(0);
+    /* 줄의 초기 스케일을 0으로 설정하여 보이지 않게 만듦 */
+    transition: transform 0.3s ease;
+    /* 줄의 스케일이 변경될 때의 전환 효과 */
+}
+
+.info__login>div:hover::after,
+.info__logout>div:hover::after {
+    transform: scaleX(1);
+    /* 호버 시 줄의 스케일을 1로 변경하여 줄이 보이게 함 */
+}
+
+.user__img>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+/*footer*/
+footer {
+    padding: 10px 50px 50px 50px;
+    margin-top: 50px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "Noto Sans KR", sans-serif;
+    display: flex;
+    /* 플렉스박스 컨테이너로 설정 */
+    flex-direction: column;
+    /* 수직으로 정렬 */
+    align-items: center;
+    /* 수평 중앙 정렬 */
+}
+
+footer>div {
+    width: 100%;
+    display: flex;
+    /* 플렉스 박스 컨테이너로 설정 */
+    flex-direction: column;
+    /* 수직으로 정렬 */
+    align-items: center;
+    /* 수평 중앙 정렬 */
+}
+
+.footer__info>div a {
+    color: rgb(46, 46, 46);
+    /* Link color */
+    text-decoration: none;
+    /* Remove underline from links */
+    transition: color 0.3s ease;
+}
+
+.footer__info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    margin-bottom: 20px;
+    /* 간격 조절 */
+    width: 100%;
+    /* 전체 폭 사용 */
+    text-align: center;
+    /* 텍스트 중앙 정렬 */
+
+}
+
+.footer__info>div a:hover {
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.footer_make {
+    width: 100%;
+    /* 전체 폭 사용 */
+    text-align: right;
+    /* 우측 정렬 */
+    margin-top: 20px;
+    /* 위 요소와 간격 */
+}

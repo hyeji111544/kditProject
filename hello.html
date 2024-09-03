@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-box {
+            height: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .box1 {
+            border: 1px solid red;
+            grid-column: 1 /1 span;
+            grid-row: 1 / 2 span;
+            height: 600px;
+        }
+
+        .box2 {
+            border: 1px solid red;
+            grid-column: 2 /2 span;
+            height: 299px;
+        }
+
+        .box3 {
+            border: 1px solid red;
+            grid-column: 2 /2 span;
+            height: 298px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-box">
+        <div class="box1"><img src="/images/maincard2.jpg"></div>
+        <div class="box2"><img src="/images/maincard2.jpg"></div>
+        <div class="box3"><img src="/images/maincard2.jpg"></div>
+    </div>
+
+</body>
+
+</html>
